@@ -4,21 +4,21 @@
   "description": "nothing care!",
   "main": "index.js",
   "dependencies": {
-    
+    "vuepress-theme-meteorlxy": "^1.0.0-alpha.34"
   },
   "devDependencies": {
-    "vuepress": "^0.14.4",
-    "husky": "^1.2.1"
+    "husky": "^1.2.1",
+    "vuepress": "^1.0.0-alpha.47"
   },
   "scripts": {
-    "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build"
+    "dev": "npx vuepress dev src",
+    "build": "npx vuepress build src --dest dist"
   },
   "husky": {
     "hooks": {
       "pre-commit": " sh ./deploy.sh"
     }
   },
-  "author": "",
+  "author": "zhangzhipeng",
   "license": "ISC"
 }

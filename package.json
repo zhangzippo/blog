@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": " sh ./deploy.sh"
+      "pre-push": " sh ./deploy.sh"
     }
   },
   "author": "zhangzhipeng",

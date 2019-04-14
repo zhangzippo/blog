@@ -80,6 +80,7 @@ module.exports = {
       { text: '首页', link: '/', exact: true },
       { text: '文章', link: '/posts/', exact: false },
       { text: '心路', link: '/heart/', exact: false },
+      { text: 'github', link: 'https://github.com/zhangzippo', exact: false },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
@@ -89,7 +90,8 @@ module.exports = {
       repo: 'zhangzippo.github.io',
       clientId: '13ba6a84d27ba53bd7d1',
       clientSecret: 'ac2697b271741c47c64244ea5ef4207bbf0e787a',
-      autoCreateIssue: process.env.NODE_ENV !== 'development',
+      autoCreateIssue: true,
     },
+    // comments:false
   },
 }

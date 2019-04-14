@@ -6,6 +6,7 @@ tags:
 date: 2019-04-13
 title: 模拟浏览器操作神器Puppeteer初探
 header-title: true
+vssue-title: 模拟浏览器操作神器Puppeteer初探
 ---
 # 模拟浏览器操作神器Puppeteer初探
 ## 介绍

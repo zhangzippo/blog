@@ -4,6 +4,7 @@
   "description": "nothing care!",
   "main": "index.js",
   "dependencies": {
+    "vuepress-plugin-dehydrate": "^1.0.2",
     "vuepress-theme-meteorlxy": "^1.0.0-alpha.34"
   },
   "devDependencies": {

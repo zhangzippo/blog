@@ -832,7 +832,7 @@
   version "1.0.0-alpha.47"
   resolved "http://registry.npm.taobao.org/@vuepress/plugin-search/download/@vuepress/plugin-search-1.0.0-alpha.47.tgz#4463927edd915ee38fbe08510f4398ff9da43ab0"
 
-"@vuepress/shared-utils@^1.0.0-alpha.47":
+"@vuepress/shared-utils@^1.0.0-alpha.44", "@vuepress/shared-utils@^1.0.0-alpha.47":
   version "1.0.0-alpha.47"
   resolved "http://registry.npm.taobao.org/@vuepress/shared-utils/download/@vuepress/shared-utils-1.0.0-alpha.47.tgz#a971d026fbb1c9d05255eec7986ef9a243ce4f74"
   dependencies:
@@ -6803,6 +6803,12 @@ vuepress-plugin-container@^2.0.0:
   resolved "http://registry.npm.taobao.org/vuepress-plugin-container/download/vuepress-plugin-container-2.0.1.tgz#b20ef97dd91f137c8be119460927c5ffd64e0f77"
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-dehydrate@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/vuepress-plugin-dehydrate/download/vuepress-plugin-dehydrate-1.0.2.tgz#52ee904169fbb60542222e3cbc176e8464b5aa07"
+  dependencies:
+    "@vuepress/shared-utils" "^1.0.0-alpha.44"
 
 vuepress-plugin-nprogress@^1.0.0:
   version "1.0.0"

@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/',
   // 网站 Title
   title: '一个懒癌程序员',
   // 网站描述
@@ -88,7 +89,7 @@ module.exports = {
       repo: 'zhangzippo.github.io',
       clientId: '13ba6a84d27ba53bd7d1',
       clientSecret: 'ac2697b271741c47c64244ea5ef4207bbf0e787a',
-      // autoCreateIssue: process.env.NODE_ENV !== 'development',
+      autoCreateIssue: process.env.NODE_ENV !== 'development',
     },
   },
 }

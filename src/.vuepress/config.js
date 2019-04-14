@@ -1,4 +1,8 @@
 module.exports = {
+  plugins: [
+    // workaround SSR mismatch
+    'dehydrate',
+  ],
   base: '/',
   // 网站 Title
   title: '一个懒癌程序员',

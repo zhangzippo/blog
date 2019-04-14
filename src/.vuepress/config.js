@@ -85,10 +85,10 @@ module.exports = {
     comments: {
       platform: 'github',
       owner: 'zhangZippo',
-      repo: 'zhangZippo.github.io',
+      repo: 'zhangZippoBlog',
       clientId: '13ba6a84d27ba53bd7d1',
       clientSecret: 'ac2697b271741c47c64244ea5ef4207bbf0e787a',
-      autoCreateIssue: process.env.NODE_ENV !== 'development',
+      // autoCreateIssue: process.env.NODE_ENV !== 'development',
     },
   },
 }

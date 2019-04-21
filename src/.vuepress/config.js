@@ -59,6 +59,10 @@ module.exports = {
           account: 'zippo',
           link: 'https://www.zhihu.com/people/kevin-51-3/activities',
         },
+        weibo: {
+          account: 'zippo',
+          link: 'https://www.jianshu.com/u/2c78bea25c85',
+        }
       },
     },
 
@@ -83,7 +87,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/', exact: true },
       { text: '文章', link: '/posts/', exact: false },
-      { text: '心路', link: '/heart/', exact: false },
+      { text: '生活', link: '/life/', exact: false },
       { text: 'github', link: 'https://github.com/zhangzippo', exact: false },
     ],
 

@@ -96,6 +96,6 @@ module.exports = {
       clientSecret: 'ac2697b271741c47c64244ea5ef4207bbf0e787a',
       autoCreateIssue: true,
     },
-    // comments:false
+    comments:false
   },
 }

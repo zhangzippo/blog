@@ -4,6 +4,7 @@
     <!-- .main-div is the block with white background -->
     <div class="main-div">
       <h4 style="color:cornflowerblue">这不是一个好的时代，但也绝不是最坏的...</h4>
+      <img src="/img/beauty_1559113755348.JPG"/>
     </div>
 
     <div class="main-div">

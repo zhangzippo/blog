@@ -14,12 +14,13 @@ vssue-title: 写一个基于webpack的cli
 ## 准备
 这里我们介绍基于webpack去写一个cli工具，从前往后讲，我们写一个cli,首先要先定义命令，通过命令触发webpack的构建流程。那么我们基本上需要以下几个工具包：
 > commander：命令行接口的完整解决方案,可以方便的创建自定义命令行
-inquirer：用于创建可交互的命令行
-webpack4: 构建的基础
+> inquirer：用于创建可交互的命令行
+> webpack4: 构建的基础
 有了以上几个核心工具包之后我们就可以开始编写我们的cli工具了
 ## 开始
 先看一下我们的工作目录：
 
+```
 ├── bin   --定义自定义命令
 ├── src
 │   ├── build   -- 构建流程
@@ -27,6 +28,8 @@ webpack4: 构建的基础
 │   ├── produce
 │   └── utils
 └── webpack  --webpack配置文件
+```
+
 ### 配置命令
 打开package.json,创建bin字段，为我们的命令起一个名字(例如block)，执行文件指向我们的bin目录。
 ```
@@ -35,7 +38,8 @@ webpack4: 构建的基础
   },
 ```
 这意味着我们的命令是以block开头的，例如block build,block init 等等。然后我们进行block-cli.js的编写，注意这个文件的开头一定要有#!/usr/bin/env node，关于这行的作用大家就自行百度吧。这里我们需要引入commander这个工具包了。这里简单介绍一下commander工具的用法：
-```
+
+```javascript
 #!/usr/bin/env node
 const program = require('commander');
 /**
@@ -85,7 +89,7 @@ Commands:
 
 ```
 如果我们想自定义帮助信息的输出，我们可以这样做(当调用--help时会触发--help事件执行这个回调)：
-```
+```javascript
 program.on('--help', () => {
   console.log(`\r\nRun ${chalk.greenBright('block <command> --help')} for detailed usage of given command.`);
 });
@@ -98,7 +102,7 @@ action中的options参数中包含这两个option的值，program.parse(process.
 这里我们可以把我们预先定义好的webpack配置文件放到我们webpack文件中，这里就不举例子了，大家使用自己的配置文件即可。
 ### 执行构建流程
 既然是我们自己定义的cli工具，在使用的时候我们就不再使用webpack的cli调用方式了，比如我们正常执行构建的时候会使用命令webpack --config，在我们自己的构建工具中我们应该更优雅的采用webpack的node-api方式执行构建，例子：
-```
+```javascript
 import webpack from 'webpack';
 import configuration from '../../webpack/webpack.config';
 
@@ -106,9 +110,9 @@ module.exports = () => {
   webpack(configuration, (err, stats) => {
     if (err) {
       console.error(err.stack || err);
-      // if (err.details) {
-      //   console.error(err.details);
-      // }
+      if (err.details) {
+        console.error(err.details);
+      }
       return;
     }
     console.log(stats.toString({
@@ -128,7 +132,7 @@ module.exports = () => {
 ```
 这里的configuration就是我们预先准备的webpack配置文件，我们调用webpack()方法将配置传入，回调里包含err和stats两个参数负责输出错误信息和我们平时看到的构建流程的信息。
 我们有时候也可能会用到webpack-dev-server，它也是提供node-api方式调用的，下面是例子：
-```
+```javascript
 
 import webpack from 'webpack';
 import path from 'path';
@@ -167,7 +171,6 @@ module.exports = (modules = '*', pages = '*') => {
     console.log(chalk.greenBright('block dev-server listening on port 8081'));
   });
 };
-// module.exports = serverStart;
 ```
 这边为了支持hotreload我们需要调用 webpackDevServer.addDevServerEntrypoints，另外使用api的时候以往我们写在配置文件中的devserve的配置我们以这个方法的options传入，不需要再在配置文件中定义了。
 我们把执行的方法导出，在命令行定义处使用，就完成了我们自定义的cli工具的调用。
